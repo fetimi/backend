@@ -44,6 +44,12 @@ exports.getOneThing =(req, res, next) =>{
         .catch(error => res.status(404).json({error}));
 };
 
+exports.getThingByUserId =(req, res, next) =>{
+    Thing.find({userId: req.params.id})
+        .then(things => res.status(200).json(things))
+        .catch(error => res.status(404).json({message:'je suis laaaaaa'}));
+};
+
 exports.getAllThing = (req, res, next) => {
     Thing.find()
         .then(things => res.status(200).json(things))

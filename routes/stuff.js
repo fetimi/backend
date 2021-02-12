@@ -13,6 +13,8 @@ router.delete('/:id',auth,stuffCtrl.deleteThing);
 
 router.get('/:id',auth,stuffCtrl.getOneThing);
 
+router.get('/getThingByUserId/:id',auth,stuffCtrl.getThingByUserId);
+
 router.get('/',auth, stuffCtrl.getAllThing);
 
 module.exports = router;

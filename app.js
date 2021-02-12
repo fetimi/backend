@@ -5,6 +5,7 @@ const path = require('path');
 
 const stuffRoutes = require('./routes/stuff');
 const userRoutes = require('./routes/user');
+const listRoutes = require('./routes/list');
 
 
 mongoose.connect('mongodb+srv://salah25:Fetiminina0777@cluster0.rycs8.mongodb.net/<dbname>?retryWrites=true&w=majority',
@@ -28,5 +29,6 @@ app.use('/images',express.static(path.join(__dirname,'images')));
 
 app.use('/api/stuff',stuffRoutes);
 app.use('/api/auth',userRoutes);
+app.use('/api/list',listRoutes);
 
 module.exports = app;
